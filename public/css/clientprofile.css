@@ -101,16 +101,16 @@
 }
 
 @media (max-width:800px) {
-    #check {
+    /* #check {
         float: right;
-    }
-
-    .checkbtn {
+    } */
+    .checkbtn{
         display: block;
-        float: right;
-        margin-right: 30px;
-    }
-
+        position: absolute;
+        right: 10%;
+      
+        /* margin-right: 30px; */
+      }
     .sidebar {
         margin-top: 60px;
         float: left;

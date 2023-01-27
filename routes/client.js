@@ -229,8 +229,9 @@ router.get('/rejectorder', auth, (req, res) => {
     res.redirect('/buy')
 })
 
-router.get('/ordershistory', async (req, res) => {
+router.get('/ordershistory',auth, async (req, res) => {
     var buydata = await clientbuy.findOne({ email: useremail.Email })
+    console.log(buydata);
     try {
         res.render('ordershistory', { buydata: buydata })
     }
@@ -239,12 +240,12 @@ router.get('/ordershistory', async (req, res) => {
     }
 })
 
-router.get('/clientprofile', async (req, res) => {
+router.get('/clientprofile',auth, async (req, res) => {
     const user = await registerform.findOne({ email: useremail.Email });
     res.render('clientprofile', { clientdata: user })
 })
 
-router.post('/changepass', async (req, res) => {
+router.post('/changepass',auth, async (req, res) => {
     const user = await registerform.findOne({ email: useremail.Email });
     var rough = {
         oldpassword: req.body.oldpassword,

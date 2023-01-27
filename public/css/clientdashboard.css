@@ -140,6 +140,7 @@
   .leftsidebar{
     display: block;
     width: auto;
+    height: 50px;
   }
   .checkbtn{
     display: block;

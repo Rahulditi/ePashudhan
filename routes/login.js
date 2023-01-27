@@ -25,6 +25,7 @@ router.post('', async (req, res) => {
         const result = await bcrypt.compare(info.password, user.password);
         if(result){
         process.env.token_key = jwt.sign({ "name": "rahul" }, process.env.farmer_token);
+       
          res.redirect('/users/dashboard')
         }
         else{

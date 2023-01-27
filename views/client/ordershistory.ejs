@@ -40,7 +40,7 @@
             </thead>
             <tbody>
                 <% for(var i= locals.buydata.data.length-1; i>=buydata.data.length-8; i--) {
-                    if(buydata.data.length==0){
+                    if(i==-1 || buydata.data.length==0){
                         break;
                     }
                     %>

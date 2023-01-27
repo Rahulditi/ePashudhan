@@ -17,6 +17,7 @@ const SendmailTransport = require('nodemailer/lib/sendmail-transport');
 
 console.log(uniqid());
 router.get('/dashboard', auth, async (req, res) => {
+    console.log(process.env.token_key);
     var selldata = await sellform.findOne({ email: process.env.farmer_email })
     var user = await form.findOne({ email: process.env.farmer_email }, { '_id': false });
     var todayprice = await setprice.findOne({ date: today_date });
