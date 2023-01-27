@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/css/clientregister.css">
+</head>
+
+<body>
+    <!-- <img src="/registerbackground.jpg" alt=""> -->
+    
+    <div class="Application">
+        <div class="form">
+            <form method="post" action="">
+                <h1>Client Application form :</h1>
+            <hr>
+            <span><%= locals.text  %> </span>
+            <h2>Company Details:</h2>
+            <hr>
+            <label for="fname" class="formcontent">Company Name:   </label>
+            <input type="text" class="formbox" name="companyname" id="fname" required>
+            <label for="lname" class="formcontent">Your Name:</label>
+            <input type="text" class="formbox" name="clientname" id="lname" required><br>
+            <br>
+            <label for="state" class="formcontent">State:</label><br>
+            <input type="text" class="formbox" name="state" id="state" required><br>
+            <br>
+            <label for="city" class="formcontent">City:</label><br>
+            <input type="text" class="formbox" name="city" id="city" required><br>
+            <br>
+            <label for="locality" class="formcontent">Locality:</label><br>
+            <input type="text" class="formbox" name="locality" id="locality" required><br>
+            <br>
+            <label for="H.no," class="formcontent">Company Address</label><br>
+            <input type="text" class="formbox" name="companyaddress" id="H.no" required><br>
+            <br>
+            <label for="pincode" class="formcontent">Pin code:</label><br>
+            <input type="number" class="formbox" name="pincode" id="pincode" required><br>
+            <br>
+            <hr>
+                <h2>Contact Details:</Details></h2>
+            <br>
+            <label for="contactno." class="formcontent">Contact Number:</label><br>
+            <input type="number" name="contactno" id="contactno" class="formbox" required><br>
+            <br>
+            <label for="email" class="formcontent">Company Email</label><br>
+            <input type="email" name="email" id="email" class="formbox" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Invalid email address" required><br>
+            <br>
+            <hr>
+            <h2>Password:</h2>
+            <hr>
+            <label for="choosepassword" class="formcontent">Choose a Password:</label><br>
+            <input type="password" name="password" id="password" onkeyup='check();' class="formbox" required><br>
+            <br>
+            <label for="confirmpassword" class="formcontent">Confirm Password:</label><br>
+            <input type="password" name="confirmpassword" id="confirm_password"  onkeyup='check();' class="formbox" required><br><br>
+            <span id="message"></span>
+            <button type="submit">submit</button>
+        </form>
+        </div>
+    </div>
+
+</body>
+<script src="/js/passvalidation.js"></script>
+
+</html>

@@ -1,0 +1,30 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+}
+.content{
+    padding: 5%;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    width: auto;
+    background-color:aqua;
+}
+.label{
+    font-size: larger;
+    padding-top: 10%;
+}
+#name{
+    width: 350px;
+    height: 30px;
+}
+#password{
+    width: 350px;
+    height: 30px;
+}
+#submit{
+    height: 50px;
+    width: 60px;
+}

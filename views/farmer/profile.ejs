@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USER PROFILE</title>
+    <link rel="stylesheet" href="/css/profile.css">
+</head>
+<body>
+    <div class="userdiv">
+    <div class="userdetails">
+        <div class="details">
+        E-pashudhan Id : <div class="userbox"><%= id %></div><br><br>
+        FirstName<div class="userbox"><%= firstname %></div><br><br>
+        LastName:<div class="userbox"><%= lastname %></div><br><br>
+        Email:<div class="userbox"><%= email %></div><br><br>
+        Phno:<div class="userbox"><%= phno %></div><br><br>
+        City:<div class="userbox"><%= city %></div><br><br>
+        State:<div class="userbox"><%= state %></div><br><br>
+        Zip:<div class="userbox"><%= zip %></div><br><br>
+        </div>
+    </div>
+    <div class="changepassword">
+        <div class="changepass">
+            <form action="/users/profile" method="post">
+        <label for="oldpassword"><b>OLD PASSWORD</b></label><br>
+        <input type="password" name="oldpass" id="" required><br>
+        <label for="setnewpass">NEW PASSWORD</label><br>
+        <input type="password" name="newpass" id="password" onkeyup='check();' required><br>
+        <label for="confirmnewpass">CONFIRM NEW PASSWORD</label><br>
+        <input type="password" name="confirmnewpass" onkeyup='check();' id="confirm_password"><br>
+        <span id="message"></span>
+        <button type="submit">SUBMIT</button>
+        </form>
+        </div>
+    </div>
+    </div>
+
+</body>
+<script src="/js/passvalidation.js"></script>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Milk</title>
+    <link rel="stylesheet" href="/css/clientprofile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <div class="sidebar">
+
+            <a href="dashboard">DASHBOARD</a>
+            <a href="buy">BUY</a>
+            <a href="ordershistory">ORDERS HISTORY</a>
+            <a class="active" href="clientprofile">PROFILE</a>
+            <a href="/client/logout">LOGOUT</a>
+        </div>
+        <div class="profile-changepass">
+            <div class="profiledetails">
+                
+                <span><div class="head">Email :</div><%= locals.clientdata.email %></span><br>
+                <br>
+                <span><div class="head">CompanyName :</div><%= locals.clientdata.companyname %></span><br>
+                <br>
+                <span><div class="head">ClientName :</div><%= locals.clientdata.clientname %></span><br>
+                <br>
+                <span><div class="head">State :</div><%= locals.clientdata.state %></span><br>
+                <br>
+                <span><div class="head">City :</div><%= locals.clientdata.city %></span><br>
+                <br>
+                <span><div class="head">Locality :</div><%= locals.clientdata.locality %></span><br>
+                <br>
+                <span><div class="head">CompanyAddress :</div><%= locals.clientdata.companyaddress %></span><br>
+                <br>
+                <span><div class="head">Pincode :</div><%= locals.clientdata.pincode %></span><br>
+                <br>
+                <span><div class="head">Contactno :</div><%= locals.clientdata.contactno %></span>
+                <br>
+            </div>
+            <div class="changepassword">
+                <form action="/client/changepass" method="post">
+                <label for="oldpass">OLD-PASSWORD:
+                    <input type="password" name="oldpassword" id="">
+                </label>
+                <label for="oldpass">NEW-PASSWORD:
+                    <input type="password" name="newpassword" id="">
+                </label>
+                <label for="oldpass">RE-ENTER-NEW-PASSWORD:
+                    <input type="password" name="confirmnewpassword" id="">
+                </label>
+                <button type="submit" id="submit">SUBMIT</button>
+                <span style="color: red;"><%= locals.message  %></span>
+            </form> 
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

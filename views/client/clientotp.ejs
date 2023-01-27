@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP-VERIFICATION</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .otp{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            height: 200px;
+            width: 200px;
+            padding: 5%;
+            background-color:rgb(46, 230, 230);
+        }
+        form{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div class="otp">
+        <h2>CLIENT OTP VERIFICATION</h2>
+    <form action="/client/otp" method="post">
+        <label for="otpverification">ENTER OTP SENT TO YOUR EMAIL:<br>
+            <input type="number" name="otp" id="otp" required><br>
+        </label>
+        <button type="submit">submit</button>
+    </form>
+    <span style="color: red;"><%= locals.message  %> </span>
+    </div>
+</body>
+</html>

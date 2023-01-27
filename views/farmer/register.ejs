@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/css/register.css">
+</head>
+
+<body>
+    <!-- <img src="/registerbackground.jpg" alt=""> -->
+    
+    <div class="Application">
+        
+        <div class="form">
+            <form method="post" action="">
+                <h1>Application form :</h1>
+                <span style="color: red;"><%= locals.message  %></span>
+            <hr>
+            <h2>Personal Details:</h2>
+            <hr>
+            <label for="fname" class="formcontent">First Name:   </label>
+            <input type="text" class="formbox" name="firstname" id="fname" required>
+            <label for="lname" class="formcontent">Last Name:</label>
+            <input type="text" class="formbox" name="lastname" id="lname" required><br>
+            <br>
+            <label for="state" class="formcontent">State:</label><br>
+            <input type="text" class="formbox" name="state" id="state" required><br>
+            <br>
+            <label for="city" class="formcontent">City:</label><br>
+            <input type="text" class="formbox" name="city" id="city" required><br>
+            <br>
+            <label for="locality" class="formcontent">Locality:</label><br>
+            <input type="text" class="formbox" name="locality" id="locality" required><br>
+            <br>
+            <label for="H.no," class="formcontent">H.no.</label><br>
+            <input type="text" class="formbox" name="houseno" id="H.no" required><br>
+            <br>
+            <label for="pincode" class="formcontent">Pin code:</label><br>
+            <input type="number" class="formbox" name="pincode" id="pincode" required><br>
+            <br>
+            <hr>
+            <!-- <h2>Bussiness Details:</h2>
+            <hr>
+            <p>Which Domestic Animals you have:</p>
+            <input type="checkbox" value="cow" class="icow" name="cattle" id="cow">
+            <label for="cow" class="cow">Cow</label><br>
+            <input type="checkbox" value="buffalo" class="ibuffalo" name="cattle" id="buffalo">
+            <label for="buffalo" class="buffalo">Buffalo</label><br>
+            <input type="checkbox" value="donkey" class="idonkey" name="cattle" id="donkey">
+            <label for="donkey" class="donkey">Donkey</label><br>
+            <br>
+            <label for="anyother" class="formcontent">Any other?? Specify:</label>
+            <input type="text" class="formbox" name="othercattle" id="anyother"><br>
+            <br>
+            <label for="milkamt" class="formcontent">How much milk gets produced in your farm on an average?(in
+                litres)</label><br>
+                <input type="number" class="formbox" name="milkamt" id="milkamt">
+                <hr> -->
+                <h2>Contact Details:</Details></h2>
+            <!-- <input type="text" class="formbox" name><br> -->
+            <br>
+            <label for="contactno." class="formcontent">Contact Number:</label><br>
+            <input type="number" name="contactno" id="contactno" class="formbox" required><br>
+            <br>
+            <label for="email" class="formcontent">Enter your email:</label><br>
+            <input type="email" name="email" id="email" class="formbox" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Invalid email address" required><br>
+            <br>
+            <hr>
+            <h2>Password:</h2>
+            <hr>
+            <label for="choosepassword" class="formcontent">Choose a Password:</label><br>
+            <input type="password" name="password" id="password" onkeyup='check();' class="formbox" required><br>
+            <br>
+            <label for="confirmpassword" class="formcontent">Confirm Password:</label><br>
+            <input type="password" name="confirmpassword" id="confirm_password"  onkeyup='check();' class="formbox" required><br><br>
+            <span id="message"></span>
+            <button type="submit">submit</button>
+        </form>
+        </div>
+    </div>
+
+</body>
+<script src="/js/passvalidation.js"></script>
+
+</html>

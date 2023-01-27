@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/clientdashboard.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="topbar">
+            <div class="text-date">
+                <p>DATE: <%= locals.date  %> 
+                </p>
+            </div>
+            <div class="profile-button">
+               <a href="#">Profile</a>
+            </div>
+        </div>
+        <!-- <div class="mobilemenu">
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <div class="sidebarm"> -->
+        <!-- <img src="/logo.png" alt="logo" class="logoimg"> -->
+        <!-- <a class="active" href="#home">DASHBOARD <img src="/dashboard.png" alt="" srcset="" height="30px"
+                        width="30px"></a>
+                <a href="#news">BUY</a>
+                <a href="#contact">ORDERS HISTORY</a>
+                <a href="/profile.html">PROFILE</a>
+                <a href="#">CONTACT US</a>
+            </div>
+        </div> -->
+        <!-- <img src="/logo.png" alt="logo" class="logoimg"> -->
+        <div class="leftsidebar">
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <h2>E-PASHUDHAN</h2>
+            <div class="sidebar">
+
+                <a class="active" href="dashboard">DASHBOARD</a>
+                <a href="buy">BUY</a>
+                <a href="ordershistory">ORDERS HISTORY</a>
+                <a href="clientprofile">PROFILE</a>
+                <a href="/client/logout">LOGOUT</a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="contentbox">
+                Orders Today(in litres)
+                <div class="contentvalues">
+                    <%= locals.today %>
+                </div>
+            </div>
+            <div class="contentbox">
+                Orders This Month(in litres)
+                <div class="contentvalues">
+                    <%= locals.month %>
+                </div>
+            </div>
+            <div class="contentbox">
+                Orders Overall(in litres)
+                <div class="contentvalues">
+                    <%= locals.overall %>
+                </div>
+            </div>
+        </div>
+        <div class="pastorders">
+            <h3>RECENT ORDERS STATUS</h3>
+            <table class="table" id="table1">
+                <thead>
+                    <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Milk(in litres)</th>
+                        <th scope="col">Sell id</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(var i= locals.buydata.data.length-1; i>=buydata.data.length-8; i--) { 
+                        if(i==-1 || buydata.data.length==undefined){
+                            break
+                        }
+                        %>
+                        <tr>
+                            <th scope="row">
+                                <%=  locals.buydata.data[i].date%>
+                            </th>
+                            <td>
+                                <%=  locals.buydata.data[i].milkamt%>
+                            </td>
+                            <td>
+                                <%=  locals.buydata.data[i].uid%>
+                            </td>
+                            <td>
+                                <%=  locals.buydata.data[i].status%>
+                            </td>
+                        </tr>
+                        <% } %>
+                </tbody>
+            </table>
+        </div>
+        <div class="rightsidebar">
+            <div class="todayprice">
+                <h3>Today Price</h3><br>
+                <div class="price">
+                    <%= locals.price %>₹
+                </div>
+                <span id="dt">as on <%= locals.date %>
+                        <%= locals.time %> </span>
+            </div>
+            <div class="details">
+                <br>
+                <div class="email">
+                    Email: <%= locals.email %> <br>
+                </div>
+                <br>
+                <div class="companyname">
+                    Company Name: <%= locals.companyname %>
+                </div>
+                <br>
+                <div class="companyaddress">
+                    Company Address: <%= locals.companyaddress %>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

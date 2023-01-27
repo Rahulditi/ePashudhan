@@ -1,0 +1,166 @@
+.container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1.5fr 4fr 1.5fr;
+    grid-template-rows: 0.5fr 1fr 1fr 1fr;
+    grid-template-areas: "sidebar profile-changepass profile-changepass"
+        "sidebar profile-changepass profile-changepass"
+        "sidebar profile-changepass profile-changepass"
+        "sidebar profile-changepass profile-changepass"
+    ;
+    grid-gap: 1.5rem;
+}
+
+.sidebar {
+    border-radius: 2%;
+    border-style: groove;
+    border-color: lightgray;
+    /* margin-left: 50px; */
+    grid-area: sidebar;
+    width: 250px;
+    position: fixed;
+    height: 100%;
+    padding-top: 10%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+
+}
+.profile-changepass{
+    grid-area: profile-changepass;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+    
+}
+.profiledetails{
+
+    background-color: rgb(131, 236, 201);
+    height: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    width: 500px;
+    padding: 10%;
+}
+.profiledetails span{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: larger;
+}
+.head{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: larger;
+}
+.changepassword{
+    height: 350px;
+    width: 330px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 55px;
+    background-color:rgb(144, 202, 203)
+    /* background-color: black; */
+}
+#submit{
+    margin-top: 5px;
+    margin-right: 45px;
+}
+/* Sidebar links */
+.sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+    background-color: cadetblue;
+    border-radius: 30px;
+    color: white;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+.checkbtn {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#check {
+    display: none;
+}
+
+.checkbtn {
+    display: none;
+}
+
+@media (max-width:800px) {
+    #check {
+        float: right;
+    }
+
+    .checkbtn {
+        display: block;
+        float: right;
+        margin-right: 30px;
+    }
+
+    .sidebar {
+        margin-top: 60px;
+        float: left;
+        width: 60%;
+        height: 50vh;
+        display: none;
+        background-color: white;
+        /* background-color: #555; */
+    }
+
+    .sidebar a {
+        display: block;
+        font-size: 20px;
+    }
+
+    /* Active/current link */
+    .sidebar a.active {
+        background-color: cadetblue;
+        border-radius: 30px;
+        color: white;
+    }
+
+    /* Links on mouse-over */
+    .sidebar a:hover:not(.active) {
+        background-color: #555;
+        color: white;
+    }
+
+    #check:checked~.sidebar {
+        display: block;
+    }
+
+    #check:checked~.profile-changepass {
+        position: absolute;
+        top: 60%;
+        padding: 5%;
+    }
+
+    .logoimg {
+        height: 80px;
+        width: 150px;
+    }
+
+}
+
+@media only screen and (max-width:800px) {
+    .container {
+        grid-template-columns: 0.7fr;
+        grid-template-rows: 0.15fr 1.5fr;
+        grid-template-areas: "sidebar"
+            "profile-changepass"
+    }
+}

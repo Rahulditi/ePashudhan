@@ -1,0 +1,22 @@
+
+.sellform{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form{
+    /* background-color: #e2e5de; */
+    background-color: #b1afaf;
+    margin-top: 25px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-left: 150px;
+    padding-right: 150px;
+    
+}
+.container{
+    /* background-color:bisque; */
+    /* background-color:burlywood; */
+    background-color:rgb(251, 197, 163);
+    margin-top: 50px;
+}

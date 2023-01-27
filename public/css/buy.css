@@ -1,0 +1,147 @@
+.container{
+  display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 4fr 1.5fr;
+    grid-template-rows: 0.5fr 1fr 1fr 1fr;
+    grid-template-areas: "sidebar buybox buybox"
+    "sidebar buybox buybox"
+    "sidebar buybox buybox"
+    "sidebar buybox buybox"
+    ;
+    grid-gap : 1.5rem;
+}
+
+.buybox{
+  border-radius: 2%;
+    border-style:groove;
+    border-color:lightgray;
+}
+.sidebar {
+  border-radius: 2%;
+    border-style:groove;
+    border-color:lightgray;
+  margin-left: 50px;
+  grid-area: sidebar;
+    width: 190px;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    padding-top: 10%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+  }
+  
+  /* Sidebar links */
+  .sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  /* Active/current link */
+  .sidebar a.active {
+    background-color:cadetblue;
+    border-radius: 30px;
+    color: white;
+  }
+  
+  /* Links on mouse-over */
+  .sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
+
+.buybox{
+  grid-area: buybox;
+  height: 200px;
+  width: auto;
+  padding: 7%;
+    position: absolute;
+    left: 40%;
+    margin-top: 150px;
+    background-color:lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.checkbtn{
+  font-size: 30px;
+  cursor: pointer;
+}
+#check{
+  display: none;
+}
+.checkbtn{
+  display: none;
+}
+
+@media (max-width:800px){
+  #check{
+    float: right;
+  }
+  .leftsidebar{
+    display: block;
+    width: auto;
+  }
+  .checkbtn{
+    display: block;
+    float: right;
+    margin-right: 30px;
+  }
+  .sidebar{
+    margin-top: 60px;
+    float: left;
+    width: 60%;
+    height: 40vh;
+    display: none;
+    background-color:white;
+    /* background-color: #555; */
+  }
+  .sidebar a {
+    display: block;
+    font-size: 20px;
+  }
+  
+  /* Active/current link */
+  .sidebar a.active {
+    background-color:cadetblue;
+    border-radius: 30px;
+    color: white;
+  }
+  
+  /* Links on mouse-over */
+  .sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
+  #check:checked ~ .sidebar{
+    display: block;
+  }
+  #check:checked ~ .buybox{
+    position: absolute;
+    top: 40%;
+    left: 13.5%;
+    padding: 18.5%;
+  }
+  .logoimg{
+    height: 80px;
+    width: 150px;
+  }
+  .buybox{
+    position: absolute;
+    left: 20%;
+    padding: 15%;
+  }
+
+}
+
+@media only screen and (max-width:800px) {
+  .container {
+      grid-template-columns: 0.7fr;
+      grid-template-rows: 0.15fr 1.5fr;
+      grid-template-areas: "sidebar"
+      "buybox"
+  }
+}

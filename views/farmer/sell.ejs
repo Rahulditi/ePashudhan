@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell</title>
+    <link rel="stylesheet" href="/css/sell.css">
+    <link rel="stylesheet" href=
+    "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="sellform">
+        <div class="form">
+    <form method="post" action="/users/sell">
+        <label for="milkamt"><b>MILK AMOUNT(in litres):</b></label><br><br>
+        <input type="Number" name="milkamt" id=""><br><br>
+        <button type="submit"><b>SELL</b></button>
+    </form>
+    </div>
+    </div>
+    
+      <div class="container">
+        <h2>LAST TRANSACTIONS</h2>
+        <br><br>
+		<table class="table">
+           
+			<thead>
+				<tr>
+					<th scope="col">Date</th>
+					<th scope="col">Milk(in litres)</th>
+					<th scope="col">Sell id</th>
+					<th scope="col">Status</th>
+				</tr>
+			</thead>
+			<tbody>
+                <% for(var i=selldata.Data.length-1; i>=0; i--) { 
+                    if(i==-1){
+                            break
+                        }
+                    %>
+				<tr>
+					<th scope="row"><%= selldata.Data[i].date%></th>
+					<td><%= selldata.Data[i].milkamt%></td>
+					<td><%= selldata.Data[i]._id%></td>
+					<td><%= selldata.Data[i].status %> </td>
+				</tr>
+            <% } %>
+			</tbody>
+		</table>
+	</div>
+</body>
+
+</html>

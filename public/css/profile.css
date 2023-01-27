@@ -1,0 +1,29 @@
+.userdiv{
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    flex-wrap: wrap;
+}
+
+.userdetails{
+    height: fit-content;
+    width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:bisque;
+}
+.userbox{
+    height: 25px;
+    width: fit-content;
+    border: 2px solid black;
+    border-radius: 2%;
+}
+.changepassword{
+    height: 400px;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #b1afaf;
+}

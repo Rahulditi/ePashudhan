@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href=
+    "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/farmerapprovals.css">
+<body>
+    <div class="container">
+        <h2>Pending Orders</h2><br>
+        <h2><%= locals.orders  %> </h2>
+    <table class="table">
+           
+        <thead>
+            <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Milk(in litres)</th>
+                <th scope="col">Email</th>
+                <th scope="col">Status</th>
+                <th scope="col">Accept</th>
+                <th scope="col">Reject</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(var i=0; i < farmerdata.data.length; i++) { %>
+            <tr>
+                <th scope="row"><%= farmerdata.data[i].date%></th>
+                <td><%= farmerdata.data[i].milkamt%></td>
+                <td><%= farmerdata.data[i].email%></td>
+                <td><%= farmerdata.data[i].status %> </td>
+                <!-- <td><a href="/admin"><i class="fa-thin fa-thumbs-up"></i></a></td> -->
+                <td><a href="/admin/farmerapprovals/accept/<%= farmerdata.data[i].email %>/<%= farmerdata.data[i].milkamt  %>/<%= farmerdata.data[i].uid  %>  "><button>Accept</button></i></a></td>
+                <td><a href="/admin/farmerapprovals/reject/<%= farmerdata.data[i].email %>/<%= farmerdata.data[i].milkamt  %>/<%= farmerdata.data[i].uid  %> "><button>Reject</button></i></a></td>
+
+            </tr>
+        <% } %>
+        </tbody>
+    </table>
+    </div>
+</body>
+</html>

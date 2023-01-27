@@ -1,0 +1,135 @@
+.container{
+    display: grid;
+      height: 100vh;
+      grid-template-columns: 1.5fr 4fr 1.5fr;
+      grid-template-rows: 0.5fr 1fr 1fr 1fr;
+      grid-template-areas: "sidebar ordershistory ordershistory"
+      "sidebar ordershistory ordershistory"
+      "sidebar ordershistory ordershistory"
+      "sidebar ordershistory ordershistory"
+      ;
+      grid-gap : 1.5rem;
+}
+.sidebar{
+    grid-area: sidebar;
+    
+}
+.ordershistory{
+    grid-area: ordershistory;
+    /* background-color: black; */
+    height: auto;
+    width: 600px;
+    padding: 10%;
+    border: 2px solid black;
+    overflow: hidden;
+    margin-left: 50px;
+}
+.sidebar {
+    border-radius: 2%;
+      border-style:groove;
+      border-color:lightgray;
+    /* margin-left: 50px; */
+    grid-area: sidebar;
+      width: 250px;
+      position: fixed;
+      height: 100%;
+      padding-top: 10%;
+      padding-left: 2.5%;
+      padding-right: 2.5%;
+      
+    }
+    
+    /* Sidebar links */
+    .sidebar a {
+      display: block;
+      color: black;
+      padding: 16px;
+      text-decoration: none;
+    }
+    
+    /* Active/current link */
+    .sidebar a.active {
+      background-color:cadetblue;
+      border-radius: 30px;
+      color: white;
+    }
+    
+    /* Links on mouse-over */
+    .sidebar a:hover:not(.active) {
+      background-color: #555;
+      color: white;
+    }
+
+    .checkbtn{
+        font-size: 30px;
+        cursor: pointer;
+      }
+      #check{
+        display: none;
+      }
+      .checkbtn{
+        display: none;
+      }
+      
+@media (max-width:800px){
+    #check{
+      float: right;
+    }
+    .leftsidebar{
+      display: block;
+      width: auto;
+    }
+    .checkbtn{
+      display: block;
+      float: right;
+      margin-right: 30px;
+    }
+    .sidebar{
+      margin-top: 60px;
+      float: left;
+      width: 60%;
+      height: 50vh;
+      display: none;
+      background-color:white;
+      /* background-color: #555; */
+    }
+    .sidebar a {
+      display: block;
+      font-size: 20px;
+    }
+    
+    /* Active/current link */
+    .sidebar a.active {
+      background-color:cadetblue;
+      border-radius: 30px;
+      color: white;
+    }
+    
+    /* Links on mouse-over */
+    .sidebar a:hover:not(.active) {
+      background-color: #555;
+      color: white;
+    }
+    #check:checked ~ .sidebar{
+      display: block;
+    }
+    #check:checked ~ .ordershistory{
+      position: absolute;
+      top: 60%;
+      margin-right: 50px;
+    }
+    .logoimg{
+      height: 80px;
+      width: 150px;
+    }
+  
+  }
+  
+  @media only screen and (max-width:800px) {
+    .container {
+        grid-template-columns: 0.7fr;
+        grid-template-rows: 0.15fr 1.5fr;
+        grid-template-areas: "sidebar"
+        "ordershistory"
+    }
+  }
