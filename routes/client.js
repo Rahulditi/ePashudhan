@@ -45,7 +45,7 @@ router.get('/register', (req, res) => {
 var registerinfo;
 
 var transporter = nodemailer.createTransport({
-    service: 'hotmail',
+    host:"smtp-mail.outlook.com",
     auth: {
         user: process.env.auth_user,
         pass: process.env.auth_pass
