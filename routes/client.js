@@ -47,8 +47,8 @@ var registerinfo;
 var transporter = nodemailer.createTransport({
     service: 'hotmail',
     auth: {
-        user: 'rahulditi01@outlook.com',
-        pass: 'Outlook@123'
+        user: process.env.auth_user,
+        pass: process.env.auth_pass
     }
 });
 var otp = Math.floor(1000 + Math.random() * 9000);
