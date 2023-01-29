@@ -53,8 +53,6 @@ router.get('/dashboard', auth, async (req, res) => {
 
         
     }
-    console.log(today_date);
-    console.log(todayprice);
     var today=0;
     var overall=0;
     var price=0;

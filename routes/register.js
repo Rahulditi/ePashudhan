@@ -69,7 +69,7 @@ router.post('', async (req, res) => {
 
 router.post('/otp', async (req, res) => {
   if (otp == req.body.otp) {
-    const sellformemail = new sellform({ email: info.email});
+    const sellformemail = new sellform({ email: info.email,Data: [{ milkamt: 0, date: 0 }]});
     await sellformemail.save();
     const data = new form(info);
     await data.save();
