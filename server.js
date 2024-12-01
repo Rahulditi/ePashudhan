@@ -12,7 +12,7 @@ const client = require('./routes/client');
 
 require('dotenv').config();
 
-url = `mongodb+srv://e-pashudhan:1234567890@cluster0.b7zvvpp.mongodb.net/?retryWrites=true&w=majority`
+url = `mongodb+srv://e-pashudhan:@cluster0.b7zvvpp.mongodb.net/?retryWrites=true&w=majority`
 mongoose.set('strictQuery', true);
 mongoose.connect(url).then(() => {
     console.log('connected to database');
